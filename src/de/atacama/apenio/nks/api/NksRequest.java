@@ -48,6 +48,8 @@ public class NksRequest {
 	public static final NksRequest INSTANCE = new NksRequest();
 
 	private static final String SEARCH = "/search";
+	
+	private static final String PROPOSAL = SEARCH + "/proposal";
 
 	private String url = "http://apenioapp02:19080/NksService/rest";
 
@@ -71,6 +73,10 @@ public class NksRequest {
 		return request(query.create(), SEARCH);
 	}
 
+	public NksResponse proposal(QueryBuilder query) {
+		return request(query.create(), PROPOSAL);
+	}
+	
 	/**
 	 * Vor dem Benutzen einer Funktion des NKS muss eine valide URL
 	 * zu einem NKS-Server gesetzt werden. Die URL muss folgende Form haben:
